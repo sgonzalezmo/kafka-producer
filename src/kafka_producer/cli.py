@@ -3,8 +3,10 @@ from typing import Optional
 import typer
 
 from kafka_producer import __app_name__, __version__
+from kafka_producer.arithmetic.cli import app as arithmetic_app
 
 app = typer.Typer(pretty_exceptions_enable=False)
+app.add_typer(arithmetic_app, name="arithmetic")
 
 
 def _version_callback(value: bool) -> None:
